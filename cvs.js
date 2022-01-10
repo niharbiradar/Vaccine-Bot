@@ -16,7 +16,19 @@ async function getCVS() {
     await page.click('#content > div.footer-content-wrapper > button')
 
     //Page 2
-    
+    await page.type('#dateOfBirth', '02082003')
+    await page.click('#content > div.main-content-wrapper > div.footer-content-wrapper > button')
+
+    //Page 3
+    const cvd = await page.waitForSelector('#CVD');
+    await cvd.click();
+    await page.click('#content > div.footer-content-wrapper > button')
+
+    //Page 4
+    const startVac = await page.waitForSelector('#questionnaire > section > div > div > fieldset > div > div:nth-child(1) > label');
+    await startVac.click();
+    await page.click('#content > div.footer-content-wrapper > button')
+
 
 }
 
