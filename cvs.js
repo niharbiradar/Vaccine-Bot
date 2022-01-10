@@ -1,3 +1,5 @@
+const puppeteer = require('puppeteer');
+
 async function getCVS() {
     const browser = await puppeteer.launch({
         headless: false,
@@ -8,9 +10,14 @@ async function getCVS() {
 
     await page.goto(url);    
 
-    //await page.click('#q8_1', {clickCount:1});
-    await page.evaluate(()=>document.querySelector('#q8_1').click())
+    //Page 1 Choices
+    await page.evaluate(()=>document.querySelector('#q8_2').click())
+    await page.evaluate(()=>document.querySelector('#q9_2').click())
+    await page.click('#content > div.footer-content-wrapper > button')
+
+    //Page 2
     
+
 }
 
 
