@@ -8,9 +8,7 @@ async function getCVS() {
     const page = await browser.newPage();
     const url = 'https://www.cvs.com/vaccine/intake/store/vaccine-select?icid=coronavirus-lp-vaccine-hero-schedule';
 
-    await page.goto(url);
-    await driver.findElement(By.css("input[name='8']")).click();
-    
+    await page.goto(url);    
 
 }
 
