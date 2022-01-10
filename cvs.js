@@ -1,5 +1,3 @@
-const puppeteer = require('puppeteer')
-
 async function getCVS() {
     const browser = await puppeteer.launch({
         headless: false,
@@ -10,7 +8,8 @@ async function getCVS() {
 
     await page.goto(url);    
 
-    await page.click('#q8_1', {clickCount:1});
+    //await page.click('#q8_1', {clickCount:1});
+    await page.evaluate(()=>document.querySelector('#q8_1').click())
     
 }
 
