@@ -29,6 +29,14 @@ async function getCVS() {
     await startVac.click();
     await page.click('#content > div.footer-content-wrapper > button')
 
+    //Page 5
+    const address = await page.waitForSelector('#address');
+    address.type('08520')
+    await page.waitForTimeout(2000);
+    await page.click('#generic > div > div > div.flex-container > button > img')
+    
+    
+
 
 }
 
