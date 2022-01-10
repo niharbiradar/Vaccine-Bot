@@ -28,6 +28,16 @@ async function getWalgreens() {
     //await page.select('#manufacturer-dropdown', '5fd42921195d89e656c0b028');      //MODERNA
 
     await page.click('#nextBtn');
+
+    //SECOND PAGE
+
+    const results = await page.$$eval('.container', rows => {
+        return rows.map(rows => {
+            const properties ={};
+            const storeName = row.querySelector('.pull-left.address-wrapper');
+            properties.title = titleElement.innerText;
+        })
+    })
 }
 getWalgreens();
 
